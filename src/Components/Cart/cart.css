@@ -1,0 +1,22 @@
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+
+.text-left {
+    text-align: left;
+}
+.updown{
+    background-color: black;
+    color: white;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 100%;
+    /* width: 20px; */
+    /* height: 20px; */
+    text-align: center;
+    align-items: center;
+    /* padding: 5px; */
+}

@@ -1,0 +1,139 @@
+ .navigation-container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     /* position: fixed; */
+     /* z-index: 2; */
+     overflow: hidden;
+     padding: 5px;
+ }
+
+ .main-nav-box {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     background-color: #fff;
+     box-shadow: 1px 1px 10px #888888;
+     padding: 5px;
+     overflow-x: hidden;
+
+ }
+
+ .navigations ul li {
+     list-style: none;
+     /* align-items: center; */
+     display: inline-block;
+     margin: 0px 25px;
+     text-transform: uppercase;
+     font-size: 12px;
+     font-weight: bold;
+     cursor: pointer;
+
+ }
+
+ .navigations {
+     margin-left: 80px;
+ }
+
+ .navigations ul li:hover {
+     /* color: #e3e3e3; */
+     color: #fe4c50;
+
+ }
+
+ .brand-name span {
+     color: #fe4c50;
+     font-weight: bold;
+ }
+
+ .brand-name h4 {
+     margin: 0;
+     padding: 0;
+     cursor: pointer;
+ }
+
+ .navigations ul {
+     margin: auto;
+ }
+
+ .navigations ul {
+     align-items: center;
+ }
+
+ .icon {
+     margin: 5px;
+     cursor: pointer;
+     z-index: -1;
+ }
+
+ .cart-badge-color {
+     color: #fe4c50;
+
+ }
+
+ .main-nav-box .menu-icon {
+     display: none;
+     margin-left: 15px;
+ }
+
+ .navigations .close-nav {
+     display: none;
+ }
+
+ @media only screen and (max-width: 995px) {
+     .web-only {
+         display: none;
+     }
+
+     .navigations {
+         position: absolute;
+         top: 0%;
+         right: 0;
+         text-align: right;
+         transform: translateX(+310px);
+         display: none;
+         /* width: 100px; */
+         /* height: 100vh;        */
+     }
+
+     .navigationShow {
+         transform: translateX(0px);
+         display: block;
+
+     }
+
+     .navigations ul {
+         z-index: -1;
+         width: 300px;
+         height: 100vh;
+         box-shadow: 1px 1px 10px #888888;
+
+         background-color: #fff;
+         z-index: 2;
+     }
+
+     .navigations ul li {
+         display: block;
+         padding: 10px;
+         width: fit-content;
+
+     }
+
+     .main-nav-box .menu-icon {
+         display: inline;
+     }
+
+     .navigations .close-nav {
+         display: block;
+         text-align: left;
+         font-weight: bold;
+         padding: 10px;
+
+     }
+
+     .close {
+         cursor: pointer;
+         /* border: 1px solid black; */
+         border-radius: 100%;
+     }
+ }
