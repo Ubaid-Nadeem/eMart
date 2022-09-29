@@ -6,7 +6,9 @@
      /* z-index: 2; */
      overflow: hidden;
      padding: 5px;
+
  }
+
 
  .main-nav-box {
      position: fixed;
@@ -16,7 +18,7 @@
      box-shadow: 1px 1px 10px #888888;
      padding: 5px;
      overflow-x: hidden;
-
+     z-index: 1;
  }
 
  .navigations ul li {
@@ -33,6 +35,7 @@
 
  .navigations {
      margin-left: 80px;
+     z-index: 2;
  }
 
  .navigations ul li:hover {
@@ -80,6 +83,21 @@
      display: none;
  }
 
+ .navigation-social {
+     text-align: right;
+ }
+
+ .navigation-social-icon {
+     padding: 10px;
+     cursor: pointer;
+     font-size: 22px;
+     text-align: right;
+ }
+ .navigation-social-icon:hover{
+    color: #fe4c50;
+
+ }
+
  @media only screen and (max-width: 995px) {
      .web-only {
          display: none;
@@ -92,6 +110,8 @@
          text-align: right;
          transform: translateX(+310px);
          display: none;
+         position: fixed;
+
          /* width: 100px; */
          /* height: 100vh;        */
      }

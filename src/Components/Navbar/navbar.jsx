@@ -78,6 +78,12 @@ function NavBar() {
                 <li>products</li>
                 <li>about</li>
                 <li>contact</li>
+
+                <div className='close-nav navigation-social'>
+                    <i class="fa-brands fa-facebook navigation-social-icon"></i>
+                    <i class="fa-brands fa-instagram navigation-social-icon"></i>
+                    <i class="fa-brands fa-twitter navigation-social-icon"></i>
+                </div>
             </ul>
         </div>
     </>

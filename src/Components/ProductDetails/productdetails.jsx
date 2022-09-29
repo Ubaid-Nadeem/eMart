@@ -1,28 +1,29 @@
 import { Image } from 'antd';
 import './productdetails.css'
-
+// import { Newproduct } from '../HomePage/home';
+// import '../HomePage/home.css'
 function ViewProduct() {
 
 
     return <>
         <div>
             <div class="card">
-                <div class="container-fliud">
+                <div class="container-fliud preview-container">
                     <div class="wrapper row">
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
 
-                                <div >
-                                    <Image
-                                        class="tab-pane active" id="pic-1"
-                                        src="https://www.kablewala.com.bd/images/detailed/186/168__1_.jpeg"
-                                        style={{ textAlign: "right" }}
-                                        width="330px"
-                                        height="330px"
-                                    />
 
-                                </div>
+                                <Image
+                                    class="tab-pane active" id="pic-1"
+                                    src="https://www.kablewala.com.bd/images/detailed/186/168__1_.jpeg"
+                                    // style={{ textAlign: "right" }}
+                                    max-width="330px"
+                                    height="330px"
+                                />
+
+
                             </div>
 
                         </div>
@@ -51,6 +52,11 @@ function ViewProduct() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <h1 style={{textAlign:"center"}}>Related Products</h1>
+                
             </div>
         </div>
     </>
