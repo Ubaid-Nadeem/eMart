@@ -1,22 +1,52 @@
-@media (min-width: 1025px) {
-    .h-custom {
-        height: 100vh !important;
+.main-cart-box h4 {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-card-container {
+    /* background-color: #d2dae2; */
+    padding: 5px;
+}
+
+.subtotal-container {
+    background-color: #eee;
+    padding: 20px;
+
+}
+
+.single-card {
+    border-bottom: 1px solid #808e9b;
+    padding-bottom: 10px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.subtotal-container button {
+    margin: 5px;
+}
+
+.cart-remove {
+    color: #b71540;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .cart-total-ptice {
+        text-align: right;
+    }
+
+    .singlecart-price {
+        display: block;
+        text-align: right;
+
     }
 }
 
-.text-left {
-    text-align: left;
-}
-.updown{
-    background-color: black;
-    color: white;
-    border: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 100%;
-    /* width: 20px; */
-    /* height: 20px; */
-    text-align: center;
-    align-items: center;
-    /* padding: 5px; */
+@media only screen and (max-width: 488px) {
+    .subtotal-container button {
+        width: 100%;
+    }
 }

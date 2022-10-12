@@ -8,11 +8,16 @@ import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import './nav.css'
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { AppContext } from '../../Context/context';
 function NavBar() {
+    let { cart, cartlength } = useContext(AppContext)
+    let [searchParams] = useSearchParams();
+
 
     const [sideMenu, setSideMenu] = useState('navigations')
-
+    const navigate = useNavigate()
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
             right: -3,
@@ -23,17 +28,21 @@ function NavBar() {
     }));
 
 
+    useEffect(() => {
+        console.log(cart)
+        console.log(cartlength)
+    }, [])
 
-
-
-
+    const GoToHome = () => {
+        navigate('/')
+    }
 
     return <>
         <div className='main-nav-box'>
             <Container>
                 <div className='navigation-container'>
                     <div className='brand-name'>
-                        <h4><span>e</span>Mart</h4>
+                        <h4 onClick={GoToHome}><span>e</span>Mart</h4>
                     </div>
                     <div className={`web-only navigations`}>
                         <ul>
@@ -43,19 +52,34 @@ function NavBar() {
                                 }}
                                 />
                             </div>
-                            <li>home</li>
+                            <li onClick={() => {
+                                navigate('/')
+                            }}>home</li>
                             <li>Products</li>
-                            <li>about</li>
-                            <li>contact</li>
+                            <li onClick={() => {
+                                navigate('/about')
+                            }}>about</li>
+                            <li onClick={() => {
+                                navigate('/contact')
+                            }}>contact</li>
                         </ul>
                     </div>
                     <div>
                         <PersonIcon className='icon' />
-                        <IconButton aria-label="cart" className='icon'>
-                            <StyledBadge badgeContent={4} color="secondary">
-                                <ShoppingCartIcon />
-                            </StyledBadge>
-                        </IconButton>
+                        <div style={{ display: "inline-block", cursor: "pointer" }} onClick={() => {
+                            if (window.location.pathname == '/cart') {
+                                window.history.back()
+                            } else {
+                                navigate('/cart')
+
+                            }
+                        }}>
+                            <IconButton aria-label="cart" className='icon' >
+                                <StyledBadge badgeContent={cartlength} color="secondary">
+                                    <ShoppingCartIcon />
+                                </StyledBadge>
+                            </IconButton>
+                        </div>
 
                         <MenuIcon className='icon menu-icon' onClick={() => {
                             setSideMenu('navigationShow')
@@ -66,7 +90,9 @@ function NavBar() {
             </Container>
 
         </div>
-        <div className={`${sideMenu} navigations`}>
+        <div className={`${sideMenu} navigations sideNavigation`} onClick={() => {
+            setSideMenu('')
+        }}>
             <ul>
                 <div className="close-nav">
                     <CloseIcon className='close' onClick={() => {
@@ -74,10 +100,16 @@ function NavBar() {
                     }}
                     />
                 </div>
-                <li>home</li>
-                <li>products</li>
-                <li>about</li>
-                <li>contact</li>
+                <li onClick={() => {
+                    navigate('/')
+                }}>home</li>
+                <li>Products</li>
+                <li onClick={() => {
+                    navigate('/about')
+                }}>about</li>
+                <li onClick={() => {
+                    navigate('/contact')
+                }}>contact</li>
 
                 <div className='close-nav navigation-social'>
                     <i class="fa-brands fa-facebook navigation-social-icon"></i>

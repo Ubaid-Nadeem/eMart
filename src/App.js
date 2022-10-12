@@ -10,6 +10,15 @@ import { getAnalytics } from "firebase/analytics";
 // import Home from './Components/HomePage/home';
 import Checkout from './Components/Checkout/checkout';
 import { AppProvider } from './Context/context';
+import Basic from './Components/Cart/cart';
+import About from './Components/About/about';
+import Contact from './Components/Contact/contact';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import Login from './Auth/login/login';
+import SignUp from './Auth/signUp/signup';
 
 function App() {
 
@@ -31,11 +40,18 @@ function App() {
   return (
     <div className="App">
       <AppProvider>
-          <NavBar />
-          {/* <ViewProduct/> */}
-          <Home />
-          {/* <Checkout /> */}
-        </AppProvider>
+        <NavBar />
+      
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/view' element={<ViewProduct />} />
+          <Route path='/cart' element={<Basic />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
+        </Routes>
+      </AppProvider>
 
     </div>
   );
