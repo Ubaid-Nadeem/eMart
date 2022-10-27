@@ -29,8 +29,6 @@ function NavBar() {
 
 
     useEffect(() => {
-        console.log(cart)
-        console.log(cartlength)
     }, [])
 
     const GoToHome = () => {
@@ -65,7 +63,9 @@ function NavBar() {
                         </ul>
                     </div>
                     <div>
-                        <PersonIcon className='icon' />
+                        <PersonIcon className='icon' onClick={()=>{
+                            navigate('/login')
+                        }} />
                         <div style={{ display: "inline-block", cursor: "pointer" }} onClick={() => {
                             if (window.location.pathname == '/cart') {
                                 window.history.back()
